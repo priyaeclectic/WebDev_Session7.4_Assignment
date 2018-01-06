@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title> Assignment 7.4 </title>
+</head>
+<body>
+	<div id="info"></div>
+		<form>				
+			Name:<input type="text" onclick=""><br>  
+		</form>
+
+</body>
+<script type="text/javascript">
+	function fullName (firstName) {
+    var sentence = "Person name is ";
+    // this inner function has access to the outer function's variables, including the parameter​
+   function lastName (theLastName) {
+        document.getElementById("info").innerHTML= sentence + firstName + " " + theLastName;
+    }
+    return lastName;
+}
+
+var personName = fullName ("Arthi"); ​
+// The closure (lastName) is called here after the outer function has returned above​
+personName ("Srinivasan"); // personName is instance of outer function calling inner function by passing lastName parameter.
+</script>
+</html>
